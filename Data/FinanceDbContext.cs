@@ -7,7 +7,7 @@ namespace Data
     {
         public virtual DbSet<User> Users { get; set; }
 
-        public FinanceDbContext(DbContextOptions<FinanceDbContext> options)
+        public FinanceDbContext(DbContextOptions<FinanceDbContext> options) : base(options)
         {
 
         }
@@ -18,10 +18,12 @@ namespace Data
             {
                 entiry.HasData(new User()
                 {
+                    UserId = 1,
                     Name = "Vitalii"
                 },
                 new User()
                 {
+                    UserId = 2,
                     Name = "Natalii"
                 });
             });
